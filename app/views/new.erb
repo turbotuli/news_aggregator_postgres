@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Slacker News Aggregator</title>
+  </head>
+
+  <body>
+    <h3>New article submission page</h3>
+    <form action="/articles" method="post">
+      <label for="article_title">Title:</label>
+      <input type="text" id="article_title" name="article_title" value="<%= @article_title %>">
+      <label for="article_url">URL:</label>
+      <input type="text" id="article_url" name="article_url" value="<%= @article_url %>">
+      <label for="article_description">Description:</label>
+      <input type="text" id="article_description" name="article_description" value="<%= @article_description %>">
+      <button type="submit">Submit</button>
+    </form>
+
+    <% if @errors != nil %>
+      <% @errors.each do |error| %>
+            <p><%= error %></p>
+      <% end %>
+    <% end %>
+  </body>
+</html>

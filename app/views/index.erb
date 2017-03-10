@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Slacker News Aggregator</title>
+  </head>
+
+  <body>
+    <h2>Today's News</h2>
+    <a href="articles/new">Submit a new article</a>
+    <ol>
+      <% @articles.each do |article| %>
+        <li><a href="<%= article.url %>"><%= article.title %></a>
+          <ul>
+            <li><%= article.description %></li>
+          </ul>
+        </li>
+      <% end %>
+    </ol>
+
+  </body>
+</html>
